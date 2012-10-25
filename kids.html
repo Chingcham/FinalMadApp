@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 $(":text").width("20%");
 
-$.getJSON("http://172.16.135.59/SERVER/kids_mine.php",function(result)
+$.getJSON("172.16.19.157/ToLearn/kids_mine.php",function(result)
 { 
 
 $.each(result,function(i,item){
@@ -63,7 +63,7 @@ $("#kidslist").append("<div data-role='collapsible'><h1>"+item[0]+"</h1><h2>Birt
 
 });
 
-$.getJSON("http://172.16.135.59/SERVER/centerlist.php",function(result)
+$.getJSON("172.16.19.157/ToLearn/centerlist.php",function(result)
 { 
 $.each(result,function(i,item){
 
@@ -83,7 +83,7 @@ $("#kidslist").html("<h1>"+value+" KIDS</h1>");
 if(value=='MyClass')
 {
 
-$.getJSON("http://172.16.135.59/SERVER/kids_mine.php",function(result)
+$.getJSON("172.16.19.157/ToLearn/kids_mine.php",function(result)
 { 
 
 $.each(result,function(i,item){
@@ -101,7 +101,7 @@ else
 {
  
 
-$.getJSON("http://172.16.135.59/SERVER/kid_center.php",{category:value},function(result)
+$.getJSON("172.16.19.157/ToLearn/kid_center.php",{category:value},function(result)
 { 
 
 $.each(result,function(i,item){
@@ -129,7 +129,7 @@ var value=$("#SearchKid").val();
 
 $("#kidslist").html("<br>");
 
-$.getJSON("http://172.16.135.59/SERVER/searchkids.php",{uname:value},function(result)
+$.getJSON("172.16.19.157/ToLearn/searchkids.php",{uname:value},function(result)
 { 
 
 if(result=='')

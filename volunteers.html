@@ -1,6 +1,6 @@
 <html>
 <head>      
-        <title>Volunteers</title>           
+        <title>Sample Page</title>           
         <meta name="viewport" content="width=device-width,initial-scale=1"> 
 
 <link rel="stylesheet" type="text/css" href="css/ThisIsIt.css">
@@ -41,7 +41,7 @@ var name= $("#searchvolunteer").val();
 
 	$("#here").html("<br>");
 
-	$.getJSON("http://172.16.135.59/SERVER/searchvolunteers.php",{name:name,city:city,group:group},function(result){
+	$.getJSON("172.16.19.157/ToLearn/searchvolunteers.php",{name:name,city:city,group:group},function(result){
 
 //alert(result);
 
@@ -72,7 +72,9 @@ else
 
 });
 
-$.getJSON("http://172.16.135.59/SERVER/volunteers.php",function(result){
+//alert("daivame..!");
+
+$.getJSON("172.16.19.157/ToLearn/volunteers.php",function(result){
 
 
       $.each(result,function(i,item){
@@ -86,7 +88,7 @@ $.getJSON("http://172.16.135.59/SERVER/volunteers.php",function(result){
 
 
 });
-$.getJSON("http://172.16.135.59/SERVER/citylist.php",function(result)
+$.getJSON("172.16.19.157/ToLearn/citylist.php",function(result)
 { 
 $.each(result,function(i,item){
 
@@ -97,7 +99,7 @@ $("#city").append("<option>"+item+"</option>");
 });
 
 
-$.getJSON("http://172.16.135.59/SERVER/grouplist.php",function(result)
+$.getJSON("172.16.19.157/ToLearn/grouplist.php",function(result)
 { 
 $.each(result,function(i,item){
 

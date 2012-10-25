@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>MADApp - Kids</title>
-          
+<title>Manage Volunteers</title>           
         <meta name="viewport" content="width=device-width,initial-scale=1"> 
 
 <link rel="stylesheet" type="text/css" href="css/ThisIsIt.css">
@@ -13,7 +13,7 @@
 $(document).ready(function(){
 $("#submit").click(function(){
 
-$.post("http://172.16.135.59/SERVER/edit_kids.php",$("#form1").serialize(),function(result){
+$.post("172.16.19.157/ToLearn/edit_kids.php",$("#form1").serialize(),function(result){
 if(result="Updated Successfully")
 $("#result").html(result);
 });

@@ -1,6 +1,6 @@
 <html>
 <head>      
-        <title>Exam</title>           
+        <title>Classes</title>           
         <meta name="viewport" content="width=device-width,initial-scale=1"> 
 
 <link rel="stylesheet" type="text/css" href="css/ThisIsIt.css">
@@ -20,7 +20,7 @@ var date=today.getDate();
 
 
 //alert(month);
-$.getJSON("http://172.16.135.59/SERVER/centerlist.php",function(result)
+$.getJSON("172.16.19.157/ToLearn/centerlist.php",function(result)
 { 
 $.each(result,function(i,item){
 
@@ -39,7 +39,7 @@ $("#divlevel").css("visibility","visible");
 
 $("#level").html("<option>loading..</option>");
 
-$.getJSON("http://172.16.135.59/SERVER/levellist.php",{center:center},function(result)
+$.getJSON("172.16.19.157/ToLearn/levellist.php",{center:center},function(result)
 { 
 $.each(result,function(i,item){
 
@@ -62,6 +62,37 @@ $("#divthemes").css("visibility","visible");
 
 });
 
+//here.................
+/*
+$("#themes").change(function(){
+
+	$("#date").css("visibility","visible");
+
+$("#divmarks").css("visibility","visible");
+
+var center=$("#center").val();
+
+var level=$("#level").val();
+
+$("#scores").html("<br>");
+
+$.getJSON("kidslist.php",{center:center,level:level},function(result)
+{
+
+$.each(result,function(i,item){
+
+$("#scores").append("<tr align='center'><td>"+item+"</td><td><input type='text' id='speaking' name='speaking' size='2' maxlength='2'></td><td><input type='text' id='listening' name='listening' size='2' maxlength='2'></td><td><input type='text' id='progress' name='progress' size='2' maxlength='2'></td></tr>");
+
+});
+
+});
+
+});
+
+*/
+//.........................
+
+
 $("#themes").change(function(){
 
 	$("#date").css("visibility","visible");
@@ -76,7 +107,7 @@ $("#kids").html("<option>loading..</option>");
 
 
 
-$.getJSON("http://172.16.135.59/SERVER/kidslist.php",{center:center,level:level},function(result)
+$.getJSON("172.16.19.157/ToLearn/kidslist.php",{center:center,level:level},function(result)
 {
 
 $.each(result,function(i,item)
@@ -123,7 +154,7 @@ var theme=$("#themes").val();
 var date=$("#examdate").val();
 
 
-$.getJSON("http://172.16.135.59/SERVER/addresults.php",{center:center,level:level,theme:theme,date:date},function(result){
+$.getJSON("172.16.19.157/ToLearn/addresults.php",{center:center,level:level,theme:theme,date:date},function(result){
 
 
 

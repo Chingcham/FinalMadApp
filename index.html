@@ -21,7 +21,37 @@ body
 }
 </style>
 <script type="text/javascript">
+
+
+/*
+function checkCookie()
+{
+var username=getCookie("username");
+  if (username!=null && username!="")
+  {
+  $("#email").text(username);
+
+  }
+
+}
+
+*/
+
+
+
 $(document).ready(function(){
+
+	/////document.location.reload();
+
+/* window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}*/
+
+
+
 
 $("#email").keyup(function(){
 
@@ -29,7 +59,7 @@ $("#email").keyup(function(){
 
 $("#submit").click(function(){
 
-$.post("http://172.16.135.59/SERVER/auth.php",$("#form1").serialize(),function(result){
+$.post("172.16.19.157/ToLearn/auth.php",$("#form1").serialize(),function(result){
 
 if(result =="Invalid username or/and password. Try again.")
 {
@@ -41,19 +71,29 @@ window.location.reload();
 }
 else
 {
-	window.location = 'home.html';
+	$("#result").html(result);
 }
+
+  
+
 
 });
 
 });
 
 $("#rem").change(function(){
-});
+
+
 
 });
+
+
+});
+
 </script>
+
 	</head> 
+
 <body>
 	<div data-role="page">
 
@@ -63,15 +103,17 @@ $("#rem").change(function(){
 
 	<div data-theme="a" data-role="content" id="content">
 
+
+
 		<table  align="center">
 			
 <form action="" method="post"  id="form1">
 	
 		<tr>
-			<td><b>Email</b></td><td><input type="text" name="email" id="email"></td>
+			<td><b>Email</b></td> <td>:</td> <td><input type="text" name="email" id="email"></td>
 		</tr>
 		<tr>
-			<td><b>Password</b></td><td><input type="password" name="pwd" ></td>
+			<td><b>Password</b></td> <td>:</td> <td><input type="password" name="pwd" ></td>
 		</tr>
 		
 		<tr>
