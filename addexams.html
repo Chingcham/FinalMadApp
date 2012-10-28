@@ -11,7 +11,7 @@
 $(document).ready(function(){
 
 
-$.getJSON("172.16.19.157/ToLearn/centerlist.php",function(result)
+$.getJSON("http://10.0.2.2/SERVER/centerlist.php",function(result)
 { 
 $.each(result,function(i,item){
 
@@ -29,7 +29,7 @@ var center=$("#center").val();
 
 $("#level").html("<option>loading..</option>");
 
-$.getJSON("172.16.19.157/ToLearn/levellist.php",{center:center},function(result)
+$.getJSON("http://10.0.2.2/SERVER/levellist.php",{center:center},function(result)
 { 
 $.each(result,function(i,item){
 
@@ -56,7 +56,7 @@ $("#kids").html("<option>loading..</option>");
 
 
 
-$.getJSON("172.16.19.157/ToLearn/kidslist.php",{center:center,level:level},function(result)
+$.getJSON("http://10.0.2.2/SERVER/kidslist.php",{center:center,level:level},function(result)
 { 
 $.each(result,function(i,item){
 
@@ -77,7 +77,7 @@ var listening=$("#listening").val();
 
 var progress=$("#progress").val();
 
-$.getJSON("172.16.19.157/ToLearn/entermarks.php",{speaking:speaking,listening:listening;progress:progress},function(result){
+$.getJSON("http://10.0.2.2/SERVER/entermarks.php",{speaking:speaking,listening:listening;progress:progress},function(result){
 
 	alert("marks entered succeesfully!");
 });

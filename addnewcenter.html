@@ -11,7 +11,7 @@
 <script type="text/javascript" >
 $(document).ready(function(){ 
 $("#submit").click(function(){
-$.post("172.16.19.157/ToLearn/addnewcenter.php",$("#addcenter").serialize(),function(result){
+$.post("http://10.0.2.2/SERVER/addnewcenter.php",$("#addcenter").serialize(),function(result){
 	
 window.location("done.html");
 });

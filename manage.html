@@ -7,7 +7,7 @@
 <script type="text/javascript" src="js/jquery.mobile-1.1.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-$.getJSON("172.16.19.157/ToLearn/centerlist.php",function(result)
+$.getJSON("http://10.0.2.2/SERVER/centerlist.php",function(result)
 { 
 $.each(result,function(i,item){
 $("#category").append("<option value="+item+">"+item+"</option>");
@@ -16,7 +16,7 @@ $("#category").append("<option value="+item+">"+item+"</option>");
 $("#category").change(function()
 {
 var value=$("#category").val();
-$.getJSON("172.16.19.157/ToLearn/manage.php",{category:value},function(result){
+$.getJSON("http://10.0.2.2/SERVER/manage.php",{category:value},function(result){
 $("#opt").append("<p>"+value+"</p><br> <a href=editcenterdetails.html data-role='button' id='editcenter'>Edit Center Details</a><br><a href=volunteers.html data-role='button' data-ajax='false'>Manage Volunteers</a><br><a href=kids.html data-role='button' data-ajax='false'>Manage Kids</a><br><a href=managelevel.html data-role='button'>Manage Level</a><br><a href=managebatches.html data-role='button'>Manage Batches</a>").trigger("create");
 });
 });

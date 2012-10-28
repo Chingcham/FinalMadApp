@@ -15,7 +15,7 @@
 <style type="text/css">
 .ui-select{
 
-	width: 22.222222328186035%;
+	width: 100%;
 }
 .imgtxt{
 text-align: center;
@@ -38,6 +38,9 @@ background-color: white;
 position: relative;
 left:20px;
 }
+div.bg{
+    background-color: black;
+}
 
 </style>
 
@@ -48,9 +51,9 @@ left:20px;
 $(document).ready(function(){
 
 
-$(":text").width("20%");
+$(":text").width("65%");
 
-$.getJSON("172.16.19.157/ToLearn/kids_mine.php",function(result)
+$.getJSON("http://10.0.2.2/SERVER/kids_mine.php",function(result)
 { 
 
 $.each(result,function(i,item){
@@ -63,7 +66,7 @@ $("#kidslist").append("<div data-role='collapsible'><h1>"+item[0]+"</h1><h2>Birt
 
 });
 
-$.getJSON("172.16.19.157/ToLearn/centerlist.php",function(result)
+$.getJSON("http://10.0.2.2/SERVER/centerlist.php",function(result)
 { 
 $.each(result,function(i,item){
 
@@ -78,12 +81,12 @@ $("#category").change(function()
 
 var value=$("#category").val();
 
-$("#kidslist").html("<h1>"+value+" KIDS</h1>");
+$("#kidslist").html("<div id="bg"><h3>"+value+" KIDS</h3></div>");
  
 if(value=='MyClass')
 {
 
-$.getJSON("172.16.19.157/ToLearn/kids_mine.php",function(result)
+$.getJSON("http://10.0.2.2/SERVER/kids_mine.php",function(result)
 { 
 
 $.each(result,function(i,item){
@@ -101,7 +104,7 @@ else
 {
  
 
-$.getJSON("172.16.19.157/ToLearn/kid_center.php",{category:value},function(result)
+$.getJSON("http://10.0.2.2/SERVER/kid_center.php",{category:value},function(result)
 { 
 
 $.each(result,function(i,item){
@@ -129,7 +132,7 @@ var value=$("#SearchKid").val();
 
 $("#kidslist").html("<br>");
 
-$.getJSON("172.16.19.157/ToLearn/searchkids.php",{uname:value},function(result)
+$.getJSON("http://10.0.2.2/SERVER/searchkids.php",{uname:value},function(result)
 { 
 
 if(result=='')
@@ -190,8 +193,6 @@ $("#dashboard").click(function(){
     <div data-role="content">
 <br><br>
 
-<div>
-
 <div id="sample"></div>
 <fieldset data-role="controlgroup" data-type="horizontal" style="width:100%;">
      	<div class="ui-radio">
@@ -208,32 +209,27 @@ $("#dashboard").click(function(){
      </label>
  </div>
      </fieldset>
-
 <div>
-<br>
-
-<div align="right">
-
+<table>
 <form id="form1" method="get" action="">
-<label for="SearchKid">Search Kid by Name</label>
-<input id="SearchKid" name="SearchKid" type="text">
-
-<label for="list" align="center">Look for the Kids from</label>
-
-<select id="category" name="category">
-    
+<tr><td><label for="SearchKid">Search Kid by Name</label></td>
+<td><label for="list" align="center">Look for the Kids from</label></td></tr>
+<tr><td style="width:100%;">
+<input id="SearchKid" name="SearchKid" type="text"></td>
+<td style="width:100%;">
+<select id="category" name="category" style="width:150%;">
 <option value="MyClass">MyClass</option>
-
+</td></tr>
 </select>
 
 </form>
+</table>
 </div>
 
 <!--div class="imgbox">
 <img src="images/Koala.jpg" class="kidimg">
-<p class="imgtxt">Daiv</p>
+<p class="imgtxt">Daiv< /p>
 </div-->
-<br>
 <div data-role="collapsible-set" data-iconpos="right">
 <div id="kidslist">
 
@@ -261,10 +257,5 @@ $("#dashboard").click(function(){
    
 
     </div><!--page-->
-
-
-    <div>
-
-    </div>
 </body>
 </html>

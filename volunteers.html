@@ -41,7 +41,7 @@ var name= $("#searchvolunteer").val();
 
 	$("#here").html("<br>");
 
-	$.getJSON("172.16.19.157/ToLearn/searchvolunteers.php",{name:name,city:city,group:group},function(result){
+	$.getJSON("http://10.0.2.2/SERVER/searchvolunteers.php",{name:name,city:city,group:group},function(result){
 
 //alert(result);
 
@@ -74,7 +74,7 @@ else
 
 //alert("daivame..!");
 
-$.getJSON("172.16.19.157/ToLearn/volunteers.php",function(result){
+$.getJSON("http://10.0.2.2/SERVER/volunteers.php",function(result){
 
 
       $.each(result,function(i,item){
@@ -88,7 +88,7 @@ $.getJSON("172.16.19.157/ToLearn/volunteers.php",function(result){
 
 
 });
-$.getJSON("172.16.19.157/ToLearn/citylist.php",function(result)
+$.getJSON("http://10.0.2.2/SERVER/citylist.php",function(result)
 { 
 $.each(result,function(i,item){
 
@@ -99,7 +99,7 @@ $("#city").append("<option>"+item+"</option>");
 });
 
 
-$.getJSON("172.16.19.157/ToLearn/grouplist.php",function(result)
+$.getJSON("http://10.0.2.2/SERVER/grouplist.php",function(result)
 { 
 $.each(result,function(i,item){
 

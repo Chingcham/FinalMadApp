@@ -18,7 +18,7 @@ $(document).ready(function(){
 	//$(".input").width("20%");
 	$(":text").width("20%");
 
-$.getJSON("172.16.19.157/ToLearn/profiledata.php",function(result)
+$.getJSON("http://10.0.2.2/SERVER/profiledata.php",function(result)
 { 
 
 
@@ -61,7 +61,7 @@ $("#submit").click(function(){
 if($("#pswd1").val()==$("#pswd2").val())
 {
 	
-$.post("172.16.19.157/ToLearn/profilesubmit.php",$("#profile").serialize(),function(){
+$.post("http://10.0.2.2/SERVER/profilesubmit.php",$("#profile").serialize(),function(){
 
 alert("updated!");
 

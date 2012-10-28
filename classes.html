@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 		 $("#result1").html("<br>");
 
-	$.getJSON("172.16.19.157/ToLearn/projected.php",function(result){
+	$.getJSON("http://10.0.2.2/SERVER/projected.php",function(result){
            
            $("#result1").append("<div data-role='collapsible-set' id='sult1'>");
 
@@ -30,7 +30,7 @@ $(document).ready(function(){
 	$("#t").click(function(){
 
 $("#result2").html("<br>");
-	$.getJSON("172.16.19.157/ToLearn/taken.php",function(result){
+	$.getJSON("http://10.0.2.2/SERVER/taken.php",function(result){
 
        $("#result2").append("<div data-role='collapsible-set' id='sult2'>");
 
@@ -47,7 +47,7 @@ $("#result2").html("<br>");
 
 $("#result3").html("<br>");
 
-	$.getJSON("172.16.19.157/ToLearn/substituted.php",function(result){
+	$.getJSON("http://10.0.2.2/SERVER/substituted.php",function(result){
 
       
        $("#result3").append("<div data-role='collapsible-set' id='sult3'>");
@@ -63,7 +63,7 @@ $("#result3").html("<br>");
 
   		$("#result4").html("<br>");
   		
-	$.getJSON("172.16.19.157/ToLearn/missed.php",function(result){
+	$.getJSON("http://10.0.2.2/SERVER/missed.php",function(result){
 
 		$("#result4").append("<div data-role='collapsible-set' id='sult4'>");
 
@@ -106,12 +106,12 @@ $("#dashboard").click(function(){
 <h1>MADApp</h1>
 <a href="" data-iconpos="notext" data-icon="logout" id="logout">Logout</a>
 </div><!--header-->
-<br><br><br>
+<br><br>
 
 		<div data-role="content">
 
 
-         <h1>CLASSES</h1>
+         <h2>CLASSES</h2>
 <div data-role="collapsible-set" data-theme="a">
 
 <div data-role="collapsible" id="tab1" data-iconpos="right">

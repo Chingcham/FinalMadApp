@@ -7,7 +7,7 @@
 <script type="text/javascript" src="js/jquery.mobile-1.1.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-$.getJSON("172.16.19.157/ToLearn/center.php",function(result){
+$.getJSON("http://10.0.2.2/SERVER/center.php",function(result){
 
       $.each(result,function(i,item){ 
       $("#here").append("<div data-role='collapsible'><h1>"+item[0]+"</h1><div><ul><li><p>Centerhead : " +item[1]+ "</li></div></div>").trigger("create");

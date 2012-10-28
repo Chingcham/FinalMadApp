@@ -10,7 +10,7 @@ ThisIsIt
 <link rel="stylesheet" type="text/css" href="css/ThisIsIt.css"/>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.1.1.min.js"></script>
-
+<script type="text/javascript" src="js/cookie.js"></script>
 
 <link rel="stylesheet" href="css/jquery.mobile.structure-1.1.1.min.css" />
 <!--script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -70,7 +70,7 @@ $(function(){
 
 	var item =new Array();
 
-    $.getJSON("172.16.19.157/ToLearn/iconslist.php",function(result){
+    $.getJSON("http://10.0.2.2/SERVER/iconslist.php",function(result){
 
       $.each(result,function(i,item){
   

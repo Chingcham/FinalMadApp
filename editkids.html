@@ -13,7 +13,7 @@
 $(document).ready(function(){
 $("#submit").click(function(){
 
-$.post("172.16.19.157/ToLearn/edit_kids.php",$("#form1").serialize(),function(result){
+$.post("http://10.0.2.2/SERVER/edit_kids.php",$("#form1").serialize(),function(result){
 if(result="Updated Successfully")
 $("#result").html(result);
 });
